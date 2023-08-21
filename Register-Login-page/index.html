@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login and Register page</title>
+    <link rel="stylesheet" href="./src/css/style.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <div class="form-box">
+        <div class="button-box">
+          <div id="btn"></div>
+          <button
+            type="button"
+            class="toggle-btn"
+            onclick="showLogin()"
+            style="color: white"
+          >
+            Log In
+          </button>
+          <button type="button" class="toggle-btn" onclick="showRegister()">
+            Register
+          </button>
+        </div>
+
+        <div class="social-icons">
+          <a href="https://www.facebook.com/"
+            ><img src="./src/images/fb.png" alt="facebook icon"
+          /></a>
+          <a href="https://www.twitter.com/"
+            ><img src="./src/images/tw.png" alt="twitter icon"
+          /></a>
+          <a href="https://www.google.com/"
+            ><img src="./src/images/gp.png" alt="google icon"
+          /></a>
+        </div>
+
+        <form class="input-group" id="login">
+          <input
+            type="text"
+            placeholder="Username"
+            class="input-filed"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            class="input-filed"
+            required
+          />
+          <input type="checkbox" class="checkbox" /><span>Remember me</span>
+          <button type="submit" class="submit-btn">Log in</button>
+        </form>
+
+        <form class="input-group" id="register">
+          <input
+            type="text"
+            placeholder="Username"
+            class="input-filed"
+            required
+          />
+          <input
+            type="date"
+            class="input-filed"
+            required
+            placeholder="Birthday"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            class="input-filed"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            class="input-filed"
+            required
+          />
+          <input type="checkbox" class="checkbox" /><span class="remember"
+            >Remember me</span
+          >
+          <button type="submit" class="submit-btn">Log in</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      let login = document.getElementById("login");
+      let register = document.getElementById("register");
+      let btnLogin = document.getElementById("btn");
+      let toggleBtn = document.querySelectorAll(".toggle-btn");
+      function showRegister() {
+        login.style.left = "-400px";
+        register.style.left = "50px";
+        btnLogin.style.left = "110px";
+        toggleBtn[1].style.color = "#fff";
+        toggleBtn[0].style.color = "#000";
+      }
+
+      function showLogin() {
+        login.style.left = "50px";
+        register.style.left = "450px";
+        btnLogin.style.left = "0px";
+        toggleBtn[0].style.color = "#fff";
+        toggleBtn[1].style.color = "#000";
+      }
+    </script>
+  </body>
+</html>
